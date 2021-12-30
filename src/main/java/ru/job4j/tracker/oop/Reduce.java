@@ -20,3 +20,4 @@ public class Reduce {
         reduce.print();
     }
 }
+
