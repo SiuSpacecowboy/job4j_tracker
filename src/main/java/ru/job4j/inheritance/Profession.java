@@ -21,9 +21,11 @@ public class Profession {
     public String getSurname() {
         return surname;
     }
+
     public String getBirthday() {
         return birthday;
     }
+
     public String getEducation() {
         return education;
     }
