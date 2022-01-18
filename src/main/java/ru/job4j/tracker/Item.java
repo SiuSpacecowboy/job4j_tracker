@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 public class Item {
     private int id;
     private String name;
-    private LocalDateTime created;
+    private LocalDateTime created = LocalDateTime.now();
 
     public Item() {
 
@@ -38,6 +38,6 @@ public class Item {
     }
 
     public LocalDateTime getDateTime() {
-        return created.now();
+        return created;
     }
 }
