@@ -70,6 +70,6 @@ public class Tracker {
                 items.length - 1 - index);
         items[size - 1] = null;
         size--;
-        return index != - 1 ? true : false;
+        return index != -1 ? true : false;
     }
 }
