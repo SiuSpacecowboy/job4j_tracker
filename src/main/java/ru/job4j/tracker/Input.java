@@ -6,3 +6,4 @@ public interface Input {
 
     int askInt(String question);
 }
+
