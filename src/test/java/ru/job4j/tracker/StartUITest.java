@@ -58,7 +58,7 @@ public class StartUITest {
     }
 
     @Test
-    public void whenShowAllAction () {
+    public void whenShowAllAction() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("test1"));
@@ -84,7 +84,7 @@ public class StartUITest {
     }
 
     @Test
-    public void whenFindIdAction () {
+    public void whenFindIdAction() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("test1"));
@@ -110,7 +110,7 @@ public class StartUITest {
     }
 
     @Test
-    public void whenFindNameAction () {
+    public void whenFindNameAction() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("test1"));

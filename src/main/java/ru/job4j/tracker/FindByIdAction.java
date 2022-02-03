@@ -8,7 +8,6 @@ public class FindByIdAction implements UserAction {
         this.out = out;
     }
 
-
     @Override
     public String name() {
         return "Find item by id";
