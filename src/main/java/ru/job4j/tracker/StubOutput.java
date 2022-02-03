@@ -11,6 +11,7 @@ public class StubOutput implements Output {
         } else {
             buffer.append("null");
         }
+        buffer.append(System.lineSeparator());
     }
 
     @Override
