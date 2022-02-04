@@ -76,6 +76,7 @@ public class StartUITest {
                         + "0. Show all items" + ln
                         + "1. Exit" + ln
                         + "=== Show all items ===" + ln
+                        + item + ln
                         + "Menu:" + ln
                         + "0. Show all items" + ln
                         + "1. Exit" + ln
@@ -102,6 +103,7 @@ public class StartUITest {
                         + "0. Find item by id" + ln
                         + "1. Exit" + ln
                         + "=== Find item by id ===" + ln
+                        + item + ln
                         + "Menu:" + ln
                         + "0. Find item by id" + ln
                         + "1. Exit" + ln
@@ -128,6 +130,7 @@ public class StartUITest {
                         + "0. Find item by name" + ln
                         + "1. Exit" + ln
                         + "=== Find items by name ===" + ln
+                        + item + ln
                         + "Menu:" + ln
                         + "0. Find item by name" + ln
                         + "1. Exit" + ln
