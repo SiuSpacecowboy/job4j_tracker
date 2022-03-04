@@ -34,8 +34,12 @@ public class ValidateInputTest {
         Input input = new StubInput(
                 new String[] {"1", "2", "3"}
         );
-        int res = new ValidateInput(input, out).askInt("Right?");
-        int exp = 1;
-        assertEquals(exp, res);
+        ValidateInput res = new ValidateInput(input, out);
+        int f = res.askInt("one");
+        int s = res.askInt("two");
+        int th = res.askInt("three");
+        assertEquals(1, f);
+        assertEquals(2, s);
+        assertEquals(3, th);
     }
 }
