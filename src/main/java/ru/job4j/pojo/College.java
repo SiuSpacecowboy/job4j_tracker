@@ -7,7 +7,7 @@ public class College {
         student.setFio("DVA");
         student.setAdmission("20.20.2020");
         student.setGroup("BIV172");
-        System.out.println("Student2.0:" + student.getFio() + " Entered:" + student.getAdmission()
+        System.out.println("Student:" + student.getFio() + " Entered:" + student.getAdmission()
                 + " Group:" + student.getGroup());
     }
 }
