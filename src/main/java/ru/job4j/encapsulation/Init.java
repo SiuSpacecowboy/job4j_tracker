@@ -21,7 +21,7 @@ public class Init {
             boolean run = true;
             while (true) {
                 String name = input.askStr("Введите слово: ");
-                if (name.equals("ex")) {
+                if (name.equals("exit")) {
                     break;
                 } else if (name.equals("sort")) {
                     array = sort.sort(input, array);
