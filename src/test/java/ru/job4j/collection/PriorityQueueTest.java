@@ -17,3 +17,4 @@ public class PriorityQueueTest {
         assertThat(result.getDesc(), is("urgent"));
     }
 }
+
