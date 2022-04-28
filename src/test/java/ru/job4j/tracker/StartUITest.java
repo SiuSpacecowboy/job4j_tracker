@@ -156,7 +156,7 @@ public class StartUITest {
         assertThat(output.toString(), is(
                         "Menu:" + ln
                                 + "0. Exit" + ln
-                                + "Wrong input, you can select: 0 .. 0" + ln
+                                + "Wrong input, you can select: 0 .. 1" + ln
                                 + "Menu:" + ln
                                 + "0. Exit" + ln
                                 + "=== Exit Program ===" + ln
