@@ -35,7 +35,6 @@ public final class NewArray implements Mass {
                 break;
             }
         }
-        String[] mass = Arrays.copyOf(array, count);
-        return mass;
+        return Arrays.copyOf(array, count);
     }
 }
