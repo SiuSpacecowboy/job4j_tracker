@@ -35,4 +35,5 @@ public class Citizen {
     public int hashCode() {
         return Objects.hash(passport);
     }
+
 }
