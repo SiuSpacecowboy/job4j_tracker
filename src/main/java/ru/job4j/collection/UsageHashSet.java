@@ -11,6 +11,8 @@ public class UsageHashSet {
         marks.add("BMW");
         marks.add("Volvo");
         marks.add("Toyota");
+        marks.add("Toyota");
+        marks.add("Toyota");
         for (String names : marks) {
             System.out.println(names);
 
