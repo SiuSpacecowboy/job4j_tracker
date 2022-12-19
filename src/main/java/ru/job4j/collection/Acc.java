@@ -52,6 +52,5 @@ public class Acc {
                 + ", requisite='" + requisite + '\''
                 + '}';
     }
-
-
 }
+
