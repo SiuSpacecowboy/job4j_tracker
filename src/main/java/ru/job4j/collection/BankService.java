@@ -26,8 +26,9 @@ public class BankService {
     }
 
     public Acc findByRequisite(String passport, String requisite) {
-        if (users.containsKey(findByPassport(passport))) {
-            for (Acc req : users.get(findByPassport(passport))) {
+        User user = findByPassport(passport);
+        if (user != null) {
+            for (Acc req : users.get(user)) {
                 if (requisite.equals(req.getRequisite())) {
                     return req;
                 }
