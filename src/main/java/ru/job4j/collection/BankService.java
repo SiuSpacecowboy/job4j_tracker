@@ -7,28 +7,11 @@ public class BankService {
     private final Map<User, List<Acc>> users = new HashMap<>();
 
     public void addUser(User user) {
-        boolean rsl = true;
-        for (User pasp : users.keySet()) {
-            if (pasp.getPassport().equals(user.getPassport())) {
-                rsl = false;
-                break;
-            }
-        }
-        if (rsl) {
-            users.put(user, new ArrayList<Acc>());
-        }
+        users.putIfAbsent(user,  new ArrayList<Acc>());
     }
 
     public boolean deleteUser(String passport) {
-        boolean rsl = false;
-        for (User pasp : users.keySet()) {
-            if (pasp.getPassport().equals(passport)) {
-                users.remove(pasp);
-                rsl = true;
-                break;
-            }
-        }
-        return rsl;
+        return users.remove(new User(passport, "")) != null;
     }
 
     public User findByPassport(String passport) {
@@ -43,15 +26,18 @@ public class BankService {
     }
 
     public Acc findByRequisite(String passport, String requisite) {
-        Acc acc = null;
+        //Acc acc = null;
         if (users.containsKey(findByPassport(passport))) {
             for (Acc req : users.get(findByPassport(passport))) {
                 if (requisite.equals(req.getRequisite())) {
-                    acc = req;
+                    //acc = req;
+                    return req;
+                    //break;
                 }
             }
         }
-        return acc;
+       //return acc;
+        return null;
     }
 
     public void addAccount(String passport, Acc acc) {
@@ -80,7 +66,7 @@ public class BankService {
                     rsl = false;
                 }
                 break;
-            }
+                }
             }
             if (rsl) {
                 for (Acc accs : users.get(findByPassport(destPassport))) {
