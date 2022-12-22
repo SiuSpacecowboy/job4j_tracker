@@ -38,43 +38,37 @@ public class BankService {
     }
 
     public void addAccount(String passport, Acc acc) {
-        boolean rsl = true;
-        for (Acc req : users.get(findByPassport(passport))) {
-            if (acc.getRequisite().equals(req.getRequisite())) {
-                rsl = false;
-                break;
+        User user = findByPassport(passport);
+        if (user != null) {
+            if (!users.get(user).contains(acc)) {
+                users.get(user).add(acc);
             }
-        }
-        if (rsl) {
-            users.get(findByPassport(passport)).add(acc);
         }
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
                           String destPassport, String destRequisite, double amount) {
-        boolean rsl = true;
-        if (users.get(findByPassport(srcPassport)).contains(findByRequisite(srcPassport, srcRequisite))
-                && users.get(findByPassport(destPassport)).contains(findByRequisite(destPassport, destRequisite))) {
-            for (Acc el : users.get(findByPassport(srcPassport))) {
-                if (el.getRequisite().equals(srcRequisite)) {
-                if (el.getBalance() - amount >= 0) {
-                    el.setBalance(el.getBalance() - amount);
-                } else {
-                    rsl = false;
-                }
-                break;
+        boolean rsl = false;
+        User srcUser = findByPassport(srcPassport);
+        User desUser = findByPassport(destPassport);
+        Acc srcAcc = findByRequisite(srcPassport, srcRequisite);
+        Acc desAcc = findByRequisite(destPassport, destRequisite);
+        if (users.get(srcUser).contains(srcAcc) && users.get(desUser).contains(desAcc)) {
+            for (Acc req : users.get(srcUser)) {
+                if (req.equals(srcAcc) && srcAcc.getBalance() < amount) {
+                    req.setBalance(srcAcc.getBalance() - amount);
+                    break;
                 }
             }
-            if (rsl) {
-                for (Acc accs : users.get(findByPassport(destPassport))) {
-                    if (accs.getRequisite().equals(destRequisite)) {
-                        accs.setBalance(accs.getBalance() + amount);
+            if (srcAcc.getBalance() >= amount) {
+                for (Acc req : users.get(desUser)) {
+                    if (req.equals(desAcc)) {
+                        req.setBalance(req.getBalance() + amount);
+                        rsl = true;
                         break;
                     }
                 }
             }
-    } else {
-            rsl = false;
         }
         return rsl;
     }
