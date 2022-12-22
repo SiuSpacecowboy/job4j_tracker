@@ -34,11 +34,7 @@ public class AnalyzeByMap {
         List<Label> subj = new ArrayList<>();
         for (Pupil stud : pupils) {
             for (Subject name : stud.subjects()) {
-                if (rsl.get(name.name()) == null) {
-                    rsl.putIfAbsent(name.name(), name.score());
-                } else {
-                    rsl.put(name.name(), rsl.get(name.name()) + name.score());
-                }
+                rsl.put(name.name(), rsl.getOrDefault(name.name(), 0) + name.score());
             }
         }
         for (String key : rsl.keySet()) {
