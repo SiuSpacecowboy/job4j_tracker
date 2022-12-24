@@ -26,6 +26,6 @@ public class ItemDescByNameTest {
                 new Item("Dev"),
                 new Item("Arm")
         ));
-        assertThat(items.toString(), is(exp.toString()));
+        assertThat(items, is(exp));
     }
 }

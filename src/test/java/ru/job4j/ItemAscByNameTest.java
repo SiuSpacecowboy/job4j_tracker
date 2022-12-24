@@ -24,6 +24,6 @@ public class ItemAscByNameTest {
                 new Item("Dev"),
                 new Item("Fonk")
         ));
-        assertThat(items.toString(), is(exp.toString()));
+        assertThat(items, is(exp));
     }
 }
