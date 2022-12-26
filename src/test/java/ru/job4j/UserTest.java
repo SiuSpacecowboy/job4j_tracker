@@ -42,6 +42,7 @@ import static org.assertj.core.api.Assertions.*;
         );
         assertThat(users).containsSequence(expected);
     }
+
      @Test
      public void whenAscForUsersWithEqualNameButDifferentAges() {
          Set<User> users = new TreeSet<>();
