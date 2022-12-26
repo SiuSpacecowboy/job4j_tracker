@@ -7,9 +7,9 @@ import java.util.Queue;
 public class ReconstructPhrase {
 
     private final Deque<Character> descendingElements;
-    private final Queue<Character> evenElements;
+    private final Deque<Character> evenElements;
 
-    public ReconstructPhrase(Deque<Character> descendingElements, Queue<Character> evenElements) {
+    public ReconstructPhrase(Deque<Character> descendingElements, Deque<Character> evenElements) {
         this.descendingElements = descendingElements;
         this.evenElements = evenElements;
     }
