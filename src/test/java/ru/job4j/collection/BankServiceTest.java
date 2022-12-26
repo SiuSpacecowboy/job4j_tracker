@@ -9,17 +9,17 @@ public class BankServiceTest {
 
     @Test
     public void addUser() {
-        User user = new User("3434", "Petr Arsentev");
+        NUser user = new NUser("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
-        User res = bank.findByPassport("3434");
+        NUser res = bank.findByPassport("3434");
         assertThat(res, is(user));
     }
 
     @Test
     public void deleteUserIsTrue() {
-        User first = new User("3434", "Petr Arsentev");
-        User second = new User("3434", "Petr Arsentev");
+        NUser first = new NUser("3434", "Petr Arsentev");
+        NUser second = new NUser("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(first);
         bank.addUser(second);
@@ -28,8 +28,8 @@ public class BankServiceTest {
 
     @Test
     public void deleteUserIsFalse() {
-        User first = new User("3434", "Petr Arsentev");
-        User second = new User("3434", "Petr Arsentev");
+        NUser first = new NUser("3434", "Petr Arsentev");
+        NUser second = new NUser("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(first);
         bank.addUser(second);
@@ -38,7 +38,7 @@ public class BankServiceTest {
 
     @Test
     public void whenEnterInvalidPassport() {
-        User user = new User("3434", "Petr Arsentev");
+        NUser user = new NUser("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Acc("5546", 150D));
@@ -48,7 +48,7 @@ public class BankServiceTest {
 
     @Test
     public void addAccount() {
-        User user = new User("3434", "Petr Arsentev");
+        NUser user = new NUser("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Acc("5546", 150D));
@@ -58,7 +58,7 @@ public class BankServiceTest {
 
     @Test
     public void addDuplicateAccount() {
-        User user = new User("3434", "Petr Arsentev");
+        NUser user = new NUser("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Acc("5546", 150D));
@@ -69,7 +69,7 @@ public class BankServiceTest {
 
     @Test
     public void transferMoneyOk() {
-        User user = new User("3434", "Petr Arsentev");
+        NUser user = new NUser("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Acc("5546", 150D));
@@ -82,7 +82,7 @@ public class BankServiceTest {
 
     @Test
     public void transferMoneySourceNull() {
-        User user = new User("3434", "Petr Arsentev");
+        NUser user = new NUser("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Acc("5546", 150D));
@@ -94,7 +94,7 @@ public class BankServiceTest {
 
     @Test
     public void transferMoneyDontHaveEnoughMoney() {
-        User user = new User("3434", "Petr Arsentev");
+        NUser user = new NUser("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Acc("5546", 150D));
@@ -106,7 +106,7 @@ public class BankServiceTest {
 
     @Test
     public void transferMoneyDestinationIsNull() {
-        User user = new User("3434", "Petr Arsentev");
+        NUser user = new NUser("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Acc("5546", 150D));

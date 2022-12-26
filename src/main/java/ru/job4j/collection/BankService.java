@@ -4,19 +4,19 @@ import java.util.*;
 
 public class BankService {
 
-    private final Map<User, List<Acc>> users = new HashMap<>();
+    private final Map<NUser, List<Acc>> users = new HashMap<>();
 
-    public void addUser(User user) {
+    public void addUser(NUser user) {
         users.putIfAbsent(user,  new ArrayList<Acc>());
     }
 
     public boolean deleteUser(String passport) {
-        return users.remove(new User(passport, "")) != null;
+        return users.remove(new NUser(passport, "")) != null;
     }
 
-    public User findByPassport(String passport) {
-        User res = null;
-        for (User pasp : users.keySet()) {
+    public NUser findByPassport(String passport) {
+        NUser res = null;
+        for (NUser pasp : users.keySet()) {
             if (pasp.getPassport().equals(passport)) {
                 res = pasp;
                 break;
@@ -26,7 +26,7 @@ public class BankService {
     }
 
     public Acc findByRequisite(String passport, String requisite) {
-        User user = findByPassport(passport);
+        NUser user = findByPassport(passport);
         if (user != null) {
             for (Acc req : users.get(user)) {
                 if (requisite.equals(req.getRequisite())) {
@@ -38,7 +38,7 @@ public class BankService {
     }
 
     public void addAccount(String passport, Acc acc) {
-        User user = findByPassport(passport);
+        NUser user = findByPassport(passport);
         if (user != null) {
             if (!users.get(user).contains(acc)) {
                 users.get(user).add(acc);
@@ -59,7 +59,7 @@ public class BankService {
         return rsl;
     }
 
-    public List<Acc> getAccounts(User user) {
+    public List<Acc> getAccounts(NUser user) {
         return users.get(user);
     }
 }

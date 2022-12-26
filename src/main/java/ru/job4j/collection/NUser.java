@@ -2,12 +2,12 @@ package ru.job4j.collection;
 
 import java.util.Objects;
 
-public class User {
+public class NUser {
 
     private String passport;
     private String username;
 
-    public User(String passport, String username) {
+    public NUser(String passport, String username) {
         this.passport = passport;
         this.username = username;
     }
@@ -36,7 +36,7 @@ public class User {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        User user = (User) o;
+        NUser user = (NUser) o;
         return Objects.equals(passport, user.passport);
     }
 
