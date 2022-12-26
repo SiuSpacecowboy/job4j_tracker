@@ -36,7 +36,6 @@ public class StringCompareTest {
         assertThat(rst).isGreaterThan(0);
     }
 
-
     @Test
     public void whenLeftGreaterThanRightResultShouldBePositive() {
         StringCompare compare = new StringCompare();
