@@ -1,4 +1,4 @@
-package ru.job4j;
+package ru.job4j.collection.sort;
 
 import java.util.Objects;
 
@@ -32,8 +32,12 @@ public class Job implements Comparable<Job> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Job)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Job)) {
+            return false;
+        }
         Job job = (Job) o;
         return priority == job.priority && Objects.equals(name, job.name);
     }

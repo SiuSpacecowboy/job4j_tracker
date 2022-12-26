@@ -1,7 +1,5 @@
 package ru.job4j.collection.sort;
 
-import ru.job4j.Job;
-
 import java.util.Comparator;
 
 public class JobAscByName implements Comparator<Job> {

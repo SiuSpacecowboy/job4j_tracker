@@ -1,7 +1,7 @@
-package ru.job4j;
+package ru.job4j.collection.sort;
 
 import org.junit.Test;
-import ru.job4j.Job;
+import ru.job4j.collection.sort.Job;
 import ru.job4j.collection.sort.JobAscByName;
 import ru.job4j.collection.sort.JobAscByPriority;
 import ru.job4j.collection.sort.JobDescByName;
