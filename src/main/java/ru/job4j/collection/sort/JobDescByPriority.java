@@ -6,7 +6,7 @@ public class JobDescByPriority implements Comparator<Job> {
 
     @Override
     public int compare(Job o1, Job o2) {
-        return o2.compareTo(o1);
+        return Integer.compare(o2.getPriority(), o1.getPriority());
     }
 }
 

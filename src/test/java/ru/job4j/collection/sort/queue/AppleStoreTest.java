@@ -1,6 +1,8 @@
-package ru.job4j.collection.queue;
+package ru.job4j.collection.sort.queue;
 
 import org.junit.Test;
+import ru.job4j.collection.queue.AppleStore;
+import ru.job4j.collection.queue.Customer;
 
 import java.util.LinkedList;
 import java.util.Queue;
