@@ -7,9 +7,9 @@ public class UsageHashSet {
 
     public static void main(String[] args) {
         Set<String> marks = new HashSet<>();
+        marks.add("Volvo");
         marks.add("Lada");
         marks.add("BMW");
-        marks.add("Volvo");
         marks.add("Toyota");
         marks.add("Toyota");
         marks.add("Toyota");
