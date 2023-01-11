@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Departments {
 
-    public static List<String> fillGaps(List<String> deps) {
+  /*  public static List<String> fillGaps(List<String> deps) {
         sortAsc(deps);
         Set<String> rsl = new LinkedHashSet<>();
         StringBuilder res = new StringBuilder();
@@ -25,7 +25,7 @@ public class Departments {
             }
         }
         return new ArrayList<>(rsl);
-    }
+    }*/
 
     public static void sortAsc(List<String> orgs) {
         orgs.sort(Comparator.naturalOrder());
@@ -33,5 +33,19 @@ public class Departments {
 
     public static void sortDesc(List<String> orgs) {
         orgs.sort(new DepDescComp());
+    }
+
+    public static List<String> fillGaps(List<String> deps) {
+        sortAsc(deps);
+        Set<String> rsl = new LinkedHashSet<>();
+        for (String name : deps) {
+            String ob = "";
+            for (String res : name.split("/")) {
+                ob = ob.equals("") ? res : ob + "/" + res;
+                rsl.add(ob);
+            }
+            ob = "";
+        }
+        return new ArrayList<>(rsl);
     }
 }
