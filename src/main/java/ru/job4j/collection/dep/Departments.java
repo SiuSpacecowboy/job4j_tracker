@@ -10,7 +10,7 @@ public class Departments {
         for (String name : deps) {
             String ob = "";
             for (String res : name.split("/")) {
-                ob = ob.equals("") ? res : ob + "/" + res;
+                ob = "".equals(ob) ? res : ob + "/" + res;
                 rsl.add(ob);
             }
         }
