@@ -1,4 +1,4 @@
-package ru.job4j.collection.sort;
+package ru.job4j.tracker.sort;
 
 import java.util.Objects;
 

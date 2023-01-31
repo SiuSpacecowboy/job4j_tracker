@@ -1,11 +1,11 @@
 package ru.job4j.collection.sort;
 
 import org.junit.Test;
-import ru.job4j.collection.sort.Job;
-import ru.job4j.collection.sort.JobAscByName;
-import ru.job4j.collection.sort.JobAscByPriority;
-import ru.job4j.collection.sort.JobDescByName;
-import ru.job4j.collection.sort.JobDescByPriority;
+import ru.job4j.tracker.sort.Job;
+import ru.job4j.tracker.sort.JobAscByName;
+import ru.job4j.tracker.sort.JobAscByPriority;
+import ru.job4j.tracker.sort.JobDescByName;
+import ru.job4j.tracker.sort.JobDescByPriority;
 import java.util.*;
 
 
