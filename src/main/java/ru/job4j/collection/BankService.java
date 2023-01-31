@@ -37,14 +37,10 @@ public class BankService {
      * @param passport номер паспорта, по которому ищут пользователя.
      */
     public NUser findByPassport(String passport) {
-        NUser res = null;
-        for (NUser pasp : users.keySet()) {
-            if (pasp.getPassport().equals(passport)) {
-                res = pasp;
-                break;
-            }
-        }
-        return res;
+        return users.keySet().stream()
+                .filter(p -> p.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
@@ -55,11 +51,10 @@ public class BankService {
     public Acc findByRequisite(String passport, String requisite) {
         NUser user = findByPassport(passport);
         if (user != null) {
-            for (Acc req : users.get(user)) {
-                if (requisite.equals(req.getRequisite())) {
-                    return req;
-                }
-            }
+            return users.get(user).stream()
+                    .filter(acc -> acc.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
         }
         return null;
     }
