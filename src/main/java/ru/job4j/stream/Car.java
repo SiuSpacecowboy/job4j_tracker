@@ -12,12 +12,12 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", created=" + created +
-                ", volume=" + volume +
-                ", color='" + color + '\'' +
-                '}';
+                "brand='" + brand + '\''
+                + ", model='" + model + '\''
+                + ", created=" + created
+                + ", volume=" + volume
+                + ", color='" + color + '\''
+                + '}';
     }
 
     static class Builder {
@@ -75,7 +75,7 @@ public class Car {
             Car newCar = new Builder()
                     .buildBrand("Mercedes")
                     .buildModel("s500")
-                    .buildCreated(LocalDate.of(2023, 1,1))
+                    .buildCreated(LocalDate.of(2023, 1, 1))
                     .buildColor("Black")
                     .build();
             System.out.println(newCar);
